@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "app-paises"
+  "defaultProject": "app-paises",
+  "cli": {
+    "analytics": "c6027636-60de-48ae-bed8-cec387a9fe94"
+  }
 }
