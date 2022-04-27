@@ -1,0 +1,54 @@
+
+<div *ngIf="!pais; else mostraPais" class="alert alert-info">
+    espere um pouco...
+</div>
+
+<ng-template  #mostraPais>
+  <div class="row">
+    <div class="col-12">
+        <h1>País: {{ pais.name }}</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandeira</h3>
+      <img [src]="pais.flags.png" width="100" height="80" [alt]="pais.name">
+    </div>
+
+    <div class="col">
+      <h3>Informação</h3>
+      <ul class="list-group">
+          <li class="list-group-item">
+            <strong>População: {{ pais.population | number}}</strong>
+          </li>
+
+          <li class="list-group-item">
+            <strong>Código do País: {{ pais.numericCode }}</strong>
+          </li>
+
+          <li class="list-group-item">
+            <strong>Código do Alpha: {{ pais.alpha3Code }}</strong>
+          </li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Tradução</h3>
+  <div class="row">
+      <div class="col">
+          <span class="badge bg-primary mr-1"> {{ pais.translations.de }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.fr }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.pt }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.es }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.fr }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.it }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.nl }} </span>
+          <span class="badge bg-primary mr-1"> {{ pais.translations.hr }} </span>
+      </div>
+  </div>
+
+  <pre class="mt-5">
+        {{ pais | json }}
+  </pre>
+</ng-template>

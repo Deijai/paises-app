@@ -1,0 +1,29 @@
+<h2>Por Região</h2>
+<small> {{ regiaoAtiva }} </small>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <button
+      class="btn btn-outline-primary"
+      [ngClass]="{
+        'btn-primary': r === regiaoAtiva,
+        'btn-outlineprimary': r !== regiaoAtiva
+      }"
+      *ngFor="let r of regioes"
+      (click)="ativarRegiao(r)"
+    >
+      {{ r }}
+    </button>
+  </div>
+</div>
+<hr />
+<div *ngIf="errorMsg" class="alert alert-danger" role="alert">
+  Não foi encontrado nenhum pais com sua pesquisa...
+</div>
+
+<div class="row" *ngIf="paises.length > 0">
+  <div class="col">
+    <app-pais-table [paises]="paises"></app-pais-table>
+  </div>
+</div>

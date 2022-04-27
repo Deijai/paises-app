@@ -1,0 +1,9 @@
+<form autocomplete="off" [formGroup]="formPesquisa" (ngSubmit)="pesquisarEmitter()">
+  <input
+    type="text"
+    formControlName="pesquisa"
+    class="form-control"
+    (input)="pressTecla($event)"
+    [placeholder]="placeholder"
+  />
+</form>
